@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
+
+  <!-- <script type="text/javascript">
+  import * as THREE from 'three'; const scene = new THREE.Scene();
+  import {
+    Camera,
+    Material,
+    Texture,
+      } from 'three';
+  </script> -->
+
+</head>
+<body>
+
+  <!-- <p>.<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br>
+  </p> -->
+
+  <div class="shader">
+    <img src="annarbor.png" alt="downtown Ann Arbor" height="100%" width="100%">
+    <div class="shader__layer specular">
+    <div class="shader__layer mask">
+    </div>
+    </div>
+  </div>
+
+  <!-- <div>
+    <p>.<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br> .<br></p>
+  </div> -->
+
+  <style>
+    .shader {
+      position: relative;
+      overflow: hidden;
+      backface-visibility: hidden; /* to force GPU performance */
+    }
+
+    .shader__layer {
+      background: black;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 100%;
+      background-position: center;
+    }
+
+
+    .specular{
+      mix-blend-mode: color-dodge;
+      background-attachment: fixed;
+      background-image: linear-gradient(315deg, #BDC4FF, #9DD0EC, #BDC4FF, #707EFF, #BDC4FF, #9DD0EC, #BDC4FF, #707EFF, #BDC4FF, #9DD0EC, #BDC4FF);
+      background-size: 20%;
+
+    }
+
+    .mask {
+      mix-blend-mode: multiply;
+      background-image: url(./logo.svg);
+      background-size: 20%;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .mask::after{
+      /* background-position: center; */
+      /* content: ""; */
+      mix-blend-mode: color-burn;
+      background-image: linear-gradient(45deg, black, white, black, white, black, white, black, white, black, white, black);
+      background-size: 20%;
+      background-attachment: fixed;
+      z-index: 1;
+    }
+
+    /* .gradient-mask {
+      mix-blend-mode: color-burn;
+      background-image: linear-gradient(-45deg, black, white);
+      background-attachment: fixed; */
+
+      /* background-size: 25%; */
+      /* background-repeat: no-repeat; */
+    }
+
+  </style>
+
+</body>
+</html>
